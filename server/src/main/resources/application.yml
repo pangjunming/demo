@@ -23,3 +23,5 @@ mybatis:
   mapper-locations: classpath:mapper/*.xml
   #实体类文件
   type-aliases-package: com.example.server.domain
+  #mybatis配置文件
+  config-location: classpath:config/mybatis-config.xml
