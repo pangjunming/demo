@@ -28,7 +28,9 @@ public class FlowerDetailCrawler extends AbstractCrawler {
             flowerVenderEntity.setVenderId(venderId);
             flowerVenderEntity.setVenderName(title);
             flowerVenderEntity.setSource("meituan");
-            flowerVenderEntity.setCity("北京");
+            if(page.getResultItems().get("city")!=null){
+                flowerVenderEntity.setCity((String)page.getResultItems().get("city"));
+            }
             page.putField("vender",flowerVenderEntity);
         } catch (Exception e) {
             e.printStackTrace();

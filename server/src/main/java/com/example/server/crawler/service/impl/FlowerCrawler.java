@@ -55,7 +55,9 @@ public class FlowerCrawler extends AbstractCrawler{
     }
 
     public static void main(String[] args) {
-        String s = "http://i.meituan.com/beijing/all/?cid=20387&p=67&stid_b=3&cateType=poi";
+        String s = "http://i.meituan.com/beijing/all/?cid=20387&p=67";
+        String replace = s.replace("http://i.meituan.com/", "").replaceAll("/all/\\?cid=20387&p=[\\d]+", "");
+        System.out.println(replace);
         String regex = "http://i.meituan.com/[\\w]+/all/\\?cid=20387&p=[\\d]+&stid_b=3&cateType=poi";
         System.out.println(s.matches(regex));
     }
